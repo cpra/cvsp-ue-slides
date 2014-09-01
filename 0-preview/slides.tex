@@ -1,6 +1,6 @@
 
 % xetex expected
-\documentclass[xetex]{beamer}
+\documentclass[xetex,professionalfont]{beamer}
 
 % we want math
 \usepackage{amsmath}
@@ -54,6 +54,9 @@
 \usepackage[english]{babel}
 
 % -----------------------------------------------------------------------------
+
+% specify PDF metadata
+\hypersetup{pdftitle={CVSP UE - Preview},pdfsubject={},pdfauthor={Christopher Pramerdorfer}}
 
 % copyright font style
 \makeatletter\renewcommand{\CRB@setcopyrightfont}{\tiny\color{lightgray}}
@@ -121,9 +124,16 @@
 \begin{frame}
 \frametitle{Course Topics}
 
-This course encourages you to:
+Motivation
 \begin{itemize}
-	\item Explore a Computer Vision (CV) topic of your choice
+	\item Computer Vision (CV) knowledge is important
+	\item As is to be able to \emph{put this knowledge to use}
+\end{itemize}
+
+\bigskip
+This course encourages you to
+\begin{itemize}
+	\item Explore a CV topic of your choice
 	\item Get used to software packages and libraries
 	\item Improve your CV programming skills
 \end{itemize}
@@ -135,7 +145,7 @@ This course encourages you to:
 \begin{frame}
 \frametitle{Your Task}
 
-Select and implement, and present a CV project of your choice
+Select, implement, and present a CV project of your choice
 \begin{itemize}
 	\item In any programming language you like
 	\item Using any \emph{publicly available} libraries you want
@@ -185,14 +195,14 @@ Accomplished by moving a balloon above their heads
 \frametitle{Project Topics}
 \framesubtitle{Proposal -- Balloon Tracking}
 
-Task: detect and track the balloon in 3D \\
-Camera parameters and balloon size are known
+Task: detect and track the balloon in 3D
 \begin{itemize}
+	\item Camera parameters and balloon size are known
 	\item Pose estimation problem
 \end{itemize}
 
 \bigskip
-Extensions:
+Extensions
 \begin{itemize}
 	\item Detect balloon color
 	\item Track multiple balloons simultaneously
@@ -209,10 +219,16 @@ Extensions:
 
 \begin{frame}
 \frametitle{Project Topics}
-\framesubtitle{Proposal -- Leftover Can Detection}
+\framesubtitle{Proposal -- Meal Composition Recognition}
 
+Unhealthy nutrition is a problem in our society\\\medskip
+Often there is little knowledge of the composition of meals
+
+\bigskip
 \begin{center}
-	\textbf{TODO}
+	\copyrightbox[b]
+	{\includegraphics[width=6cm]{figures/meal.jpg}}
+	{\centering Image by Vichaya Kiatying-Angsulee / \url{freedigitalphotos.net}}
 \end{center}
 
 \end{frame}
@@ -221,10 +237,16 @@ Extensions:
 
 \begin{frame}
 \frametitle{Project Topics}
-\framesubtitle{Proposal -- Can Counting}
+\framesubtitle{Proposal -- Meal Composition Recognition}
 
+Task: estimate share of carbs, proteins, vegetables in meals
+\begin{itemize}
+	\item From photos taken with smartphone cameras
+\end{itemize}
+
+\medskip
 \begin{center}
-	\textbf{TODO}
+	\small\url{http://www.caa.tuwien.ac.at/cvl/teaching/praktika/food/}
 \end{center}
 
 \end{frame}
@@ -233,10 +255,16 @@ Extensions:
 
 \begin{frame}
 \frametitle{Project Topics}
-\framesubtitle{Proposal -- Kinect Action Recognition}
+\framesubtitle{Proposal -- Sitting Posture Recognition}
 
+Bad sitting posture can cause health problems\\\medskip
+Task: recognize good or bad posture using a Kinect sensor
+
+\bigskip
 \begin{center}
-	\textbf{TODO}
+	\copyrightbox[b]
+	{\includegraphics[width=6cm]{figures/sitting.png}}
+	{\centering Image from \url{yogahome.net}}
 \end{center}
 
 \end{frame}
@@ -246,7 +274,7 @@ Extensions:
 \begin{frame}
 \frametitle{Project Topics}
 
-Send a short project proposal to lecturers (\url{cvsp@caa.tuwien.ac.at}):
+Send a short project proposal to lecturers (\url{cvsp@caa.tuwien.ac.at})
 \begin{itemize}
 	\item What topic do you want to cover
 	\item What is the scope (what are you going to implement?)
@@ -294,7 +322,7 @@ Do so as soon as possible (\emph{deadline: 26.10.})
 \frametitle{Syllabus}
 \framesubtitle{Available Sensor Hardware}
 
-Available sensors:
+Available sensors
 \begin{itemize}
 	\item Kinect depth sensors
 	\item IP camera network with overlapping views (stationary)
@@ -313,7 +341,7 @@ Or use your own digital camera, smartphone, ...
 \frametitle{Syllabus}
 \framesubtitle{Short report and Final Presentation}
 
-Report and presentation should include:
+Report and presentation should include
 \begin{itemize} 
 	\item A brief explanation of your topic
 	\item How you implemented it (language, libraries)
@@ -347,7 +375,7 @@ There are no regular lectures but two presentation meetings
 Assistance mainly via mail (\url{cvsp@caa.tuwien.ac.at})
 
 \bigskip
-Weekly timeslot for personal support:
+Weekly timeslot for personal support
 \begin{itemize}
 	\item \textbf{By appointment} (\url{cvsp@caa.tuwien.ac.at})
 	\item \textbf{Time}: Wed 11:45 -- 12:30 s.t. (after VO)
@@ -393,7 +421,7 @@ Final presentation: 15\%
 \begin{frame}
 \frametitle{Associated Lecture}
 
-We recommend the associated lecture that covers:
+We recommend the associated lecture that covers
 \begin{itemize}
 	\item CV software and resources
 	\item Selected CV applications
