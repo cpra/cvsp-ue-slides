@@ -50,6 +50,9 @@
 % easy way to include copyright information
 \usepackage{copyrightbox}
 
+% better bibliographies
+\usepackage[backend=biber,style=authoryear]{biblatex}
+
 % language support (english,ngerman)
 \usepackage[english]{babel}
 
@@ -63,9 +66,6 @@
 
 % make emph bold
 \DeclareTextFontCommand{\emph}{\bfseries}
-
-% use proper fonts for math
-\usefonttheme[onlymath]{serif}
 
 % use tuwcvl beamer theme
 \usetheme{tuwcvl}
@@ -273,6 +273,23 @@ Task: recognize good or bad posture using a Kinect sensor
 
 \begin{frame}
 \frametitle{Project Topics}
+\framesubtitle{Proposal -- Kinect v2 Evaluation}
+
+Evaluate the Kinect v2 sensor
+
+\bigskip
+\begin{center}
+	\copyrightbox[b]
+	{\includegraphics[width=6cm]{figures/kinect.jpg}}
+	{\centering Image from \url{microsoftstore.com}}
+\end{center}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Topics}
 
 Send a short project proposal to lecturers (\url{cvsp@caa.tuwien.ac.at})
 \begin{itemize}
@@ -384,6 +401,15 @@ Weekly timeslot for personal support
 
 \bigskip
 We expect to stay in touch with you throughout the semester
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Course Assistance}
+
+I'm abroad from 11.10.\ to 25.10.\ with limited internet access
 
 \end{frame}
 
