@@ -41,9 +41,6 @@
 \usepackage{fontspec}
 \setmonofont[Scale=0.7]{Cousine} % part of ttf-chromeos fonts on Arch
 
-% improve microtypography
-\usepackage{microtype}
-
 % multi-language quotes for babel
 \usepackage{csquotes}
 
@@ -64,8 +61,8 @@
 % copyright font style
 \makeatletter\renewcommand{\CRB@setcopyrightfont}{\tiny\color{lightgray}}
 
-% make emph bold
-\DeclareTextFontCommand{\emph}{\bfseries}
+% add bib file
+\addbibresource{literature.bib}
 
 % use tuwcvl beamer theme
 \usetheme{tuwcvl}
@@ -104,11 +101,14 @@
 \newcommand{\vy}{\vec{y}}
 \newcommand{\vz}{\vec{z}}
 
+% highlight
+\newcommand{\highlight}[1]{\textcolor{tuwcvl_inf_red}{\textbf{#1}}}
+
 % -----------------------------------------------------------------------------
 
 \title{Computer Vision Systems Programming UE}
 \subtitle{Introduction}
-\author{Christopher Pramerdorfer}
+\author{Martin Kampel, Christopher Pramerdorfer}
 \institute{Computer Vision Lab, Vienna University of Technology}
 
 \begin{document}
@@ -122,20 +122,21 @@
 % -----------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Course Topics}
+\frametitle{Course Aim}
 
-Motivation
+Improve your skills in applied Computer Vision (CV)
 \begin{itemize}
-	\item Computer Vision (CV) knowledge is important
-	\item As is to be able to \emph{put this knowledge to use}
+	\item Plan, implement, and test a small CV project
+	\item Present it orally and in written form
 \end{itemize}
 
 \bigskip
-This course encourages you to
+This allows you to
 \begin{itemize}
 	\item Explore a CV topic of your choice
-	\item Get used to software packages and libraries
+	\item Apply what you learned in the lecture
 	\item Improve your CV programming skills
+	\item Practice dissemination
 \end{itemize}
 
 \end{frame}
@@ -145,7 +146,7 @@ This course encourages you to
 \begin{frame}
 \frametitle{Your Task}
 
-Select, implement, and present a CV project of your choice
+Realize a CV project of your choice
 \begin{itemize}
 	\item In any programming language you like
 	\item Using any \emph{publicly available} libraries you want
@@ -154,6 +155,9 @@ Select, implement, and present a CV project of your choice
 
 \bigskip
 Matlab, Python, or C++ recommended
+\begin{itemize}
+	\item Don't know C++ yet? Now is a good time!
+\end{itemize}
 
 \end{frame}
 
@@ -165,11 +169,8 @@ Matlab, Python, or C++ recommended
 Choose any CV topic you want, as long as you learn something
 \begin{itemize}
 	\item Choose something that is new and interesting to you
-	\item Finalize topic and scope in consultation with lecturers
+	\item Finalize topic and scope together with lecturers
 \end{itemize}
-
-\bigskip
-Don't know what topic to choose? How about these ...
 
 \end{frame}
 
@@ -177,164 +178,6 @@ Don't know what topic to choose? How about these ...
 
 \begin{frame}
 \frametitle{Project Topics}
-\framesubtitle{Proposal -- Balloon Tracking}
-
-Involve concert audience by letting them control sound aspects\\\medskip
-Accomplished by moving a balloon above their heads
-
-\bigskip
-\begin{center}
-	\includegraphics[width=6cm]{figures/balloon.jpg}
-\end{center}
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Project Topics}
-\framesubtitle{Proposal -- Balloon Tracking}
-
-Task: detect and track the balloon in 3D
-\begin{itemize}
-	\item Camera parameters and balloon size are known
-	\item Pose estimation problem
-\end{itemize}
-
-\bigskip
-Extensions
-\begin{itemize}
-	\item Detect balloon color
-	\item Track multiple balloons simultaneously
-\end{itemize}
-
-\medskip
-\begin{center}
-	\small\url{http://www.caa.tuwien.ac.at/cvl/teaching/praktika/ballonerkennung/}
-\end{center}
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Project Topics}
-\framesubtitle{Proposal -- Meal Composition Recognition}
-
-Unhealthy nutrition is a problem in our society\\\medskip
-Often there is little knowledge of the composition of meals
-
-\bigskip
-\begin{center}
-	\copyrightbox[b]
-	{\includegraphics[width=6cm]{figures/meal.jpg}}
-	{\centering Image by Vichaya Kiatying-Angsulee / \url{freedigitalphotos.net}}
-\end{center}
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Project Topics}
-\framesubtitle{Proposal -- Meal Composition Recognition}
-
-Task: estimate share of carbs, proteins, vegetables in meals\\\medskip
-From photos taken with smartphone cameras
-
-\medskip
-\begin{center}
-	\small\url{http://www.caa.tuwien.ac.at/cvl/teaching/praktika/food/}
-\end{center}
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Project Topics}
-\framesubtitle{Proposal -- Sitting Posture Recognition}
-
-Bad sitting posture can cause health problems\\\medskip
-Task: recognize good or bad posture using a Kinect sensor
-
-\bigskip
-\begin{center}
-	\copyrightbox[b]
-	{\includegraphics[width=6cm]{figures/sitting.png}}
-	{\centering Image from \url{yogahome.net}}
-\end{center}
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Project Topics}
-\framesubtitle{Proposal -- Kinect v2 Evaluation}
-
-Evaluate the Kinect v2 sensor
-
-\bigskip
-\begin{center}
-	\copyrightbox[b]
-	{\includegraphics[width=6cm]{figures/kinect.jpg}}
-	{\centering Image from \url{microsoftstore.com}}
-\end{center}
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Project Topics}
-
-Send a short project proposal to lecturers (\url{cvsp@caa.tuwien.ac.at})
-\begin{itemize}
-	\item What topic do you want to cover
-	\item What is the scope (what are you going to implement?)
-	\item What language and libraries do you plan to use
-\end{itemize}
-
-\bigskip
-Do so as soon as possible (\emph{deadline: 26.10.})
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Syllabus}
-
-1.\ Select a CV topic according to your interests
-\begin{itemize}
-	\item Lecturers will help you define topic and scope
-\end{itemize}
-
-\medskip
-2.\ Give a short presentation on your topic (5 minutes)
-\begin{itemize}
-	\item Explain what you are going to work on
-\end{itemize}
-
-\medskip
-3.\ Implement and test your application
-\begin{itemize}
-	\item Sensor hardware is provided
-\end{itemize}
-
-\medskip
-4.\ Write a short report (around 5 pages)
-
-\medskip
-5.\ Give a final presentation (10-15 minutes)
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Syllabus}
 \framesubtitle{Available Sensor Hardware}
 
 Available sensors
@@ -342,11 +185,102 @@ Available sensors
 	\item Kinect depth sensors
 	\item IP camera network with overlapping views (stationary)
 	\item Thermal imaging camera (stationary)
-	\item Android tablets with cameras
+	\item Android tablets and phones with cameras
 \end{itemize}
 
 \bigskip
-Or use your own digital camera, smartphone, ...
+Or use existing datasets, your own camera, smartphone, ...
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Topics}
+\framesubtitle{Proposal -- Balloon Tracking}
+
+Detect and track the balloon in 3D
+
+\bigskip
+\begin{center}
+	\includegraphics[width=7cm]{figures/balloon.jpg}
+\end{center}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Topics}
+\framesubtitle{Proposal -- Object Detection in Satellite Images}
+
+Detect streets and certain objects in satellite images
+
+\bigskip
+\begin{center}
+	\copyrightbox[b]
+	{\includegraphics[width=7cm]{figures/satellite-objects.jpg}}
+	{\centering Image from \cite{sirmacek2009}}
+\end{center}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Topics}
+\framesubtitle{Proposal -- Moth Classification}
+
+Distinguish between moth species
+
+\bigskip
+\begin{center}
+	\copyrightbox[b]
+	{\includegraphics[width=7cm]{figures/moth.jpg}}
+	{\centering Image from \url{wikipedia.org}}
+\end{center}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Topics}
+\framesubtitle{Proposal -- Match Traces Left by Burglars}
+
+Match traces left by burglary tools for forensics
+
+\bigskip
+\begin{center}
+	\includegraphics[width=7cm]{figures/burglary-trace.jpg}
+\end{center}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Topics}
+\framesubtitle{More Proposals}
+
+For more topics and details see \url{http://www.caa.tuwien.ac.at/cvl/bachelorarbeiten-praktika-masterarbeiten/}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Project Topics}
+\framesubtitle{Wurstify: Example Project From Last Year}
+
+Face detection and pose estimation to map beards on faces
+
+\bigskip
+\begin{center}
+	\copyrightbox[b]
+	{\includegraphics[width=4cm]{figures/wurstify.png}}
+	{\centering Image from \url{wurstify.me}}
+\end{center}
 
 \end{frame}
 
@@ -354,34 +288,129 @@ Or use your own digital camera, smartphone, ...
 
 \begin{frame}
 \frametitle{Syllabus}
-\framesubtitle{Short report and Final Presentation}
 
-Report and presentation should include
-\begin{itemize} 
-	\item A brief explanation of your topic
-	\item How you implemented it (language, libraries)
-	\item Problems you faced during development
-	\item Tests and results
-\end{itemize}
+1.\ Select a CV topic according to your interests \highlight{[21.10.]}
+
+\medskip
+2.\ Give a short presentation on your project \highlight{[28.10.]}
+
+\medskip
+3.\ Implement and test your application \highlight{[17.01.]}
+
+\medskip
+4.\ Give a midterm presentation \highlight{[16.12.]}
+
+\medskip
+5.\ Write a short report \highlight{[17.01.]}
+
+\medskip
+6.\ Give a final presentation \highlight{[20.01.]}
 
 \end{frame}
 
 % -----------------------------------------------------------------------------
 
 \begin{frame}
-\frametitle{Course Location and Schedule}
+\frametitle{Syllabus}
+\framesubtitle{Topic Selection}
 
-There are no regular lectures but two presentation meetings
-
-\bigskip
-\textbf{Location}: Seminarraum 183/2, Favoritenstr. 9\\
-\textbf{Time}: Wed 10:15 -- 11:45 s.t.
+Send a short project proposal to lecturers (\url{cvsp@caa.tuwien.ac.at})
 
 \bigskip
-\textbf{Schedule}: \url{http://www.caa.tuwien.ac.at/cvl/teaching/wintersemester/cvsp_lu/index.html}
+Contents
+\begin{itemize}
+	\item Name, Matrikelnummer, Studienkennzahl
+	\item General introduction to your topic
+	\item Definition of the project scope (what are you going to do?)
+	\item Languages and libraries you plan to use
+\end{itemize}
 
 \bigskip
-Follow \texttt{@tuwcvsp} on Twitter for updates
+\highlight{Deadline: 21.10.}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Syllabus}
+\framesubtitle{Initial Presentation}
+
+Give an introduction to your project\\\medskip
+Tell us about your project (as in written proposal)\\\medskip
+Keep it short (around 5 minutes)
+
+\bigskip
+\highlight{28.10., 10:15} at SR 183/2 (here)
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Syllabus}
+\framesubtitle{Midterm Presentation}
+
+Briefly recap your project\\\medskip
+Focus on progress and current project status\\\medskip
+Presentation should take 5 to 10 minutes\\\medskip
+Include images and videos of your application
+
+\bigskip
+\highlight{16.12., 10:15} at SR 183/2 (here)
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Syllabus}
+\framesubtitle{Project Report}
+
+5 to 10 pages long, must include
+\begin{itemize} 
+	\item A brief explanation of your topic
+	\item Scope of your project (what was planned, what changed?)
+	\item How you implemented it (language, libraries)
+	\item Problems you faced during development
+	\item Tests and results
+\end{itemize}
+
+\bigskip
+Hand in report and project code by email \highlight{until 17.01.}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Syllabus}
+\framesubtitle{Final Presentation}
+
+Cover all topics in your report (see above list)\\\medskip
+Presentation should take 10 to 15 minutes\\\medskip
+Show a demo of your project (live or video)
+
+\bigskip
+\highlight{20.01., 10:15} at SR 183/2 (here)
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Grading}
+
+Initial presentation: 5\% \\\medskip
+Midterm presentation: 10\% \\\medskip
+Implementation and report: 70\% \\\medskip
+Final presentation: 15\%
+
+\bigskip
+\highlight{Presentations are mandatory}
+\begin{itemize}
+	\item Contact us beforehand if you cannot come
+\end{itemize}
 
 \end{frame}
 
@@ -395,22 +424,19 @@ Assistance mainly via mail (\url{cvsp@caa.tuwien.ac.at})
 \bigskip
 Weekly timeslot for personal support
 \begin{itemize}
-	\item \textbf{By appointment} (\url{cvsp@caa.tuwien.ac.at})
-	\item \textbf{Time}: Wed 11:45 -- 12:30 s.t. (after VO)
-	\item \textbf{Location}: room HA04-10 \scriptsize\url{http://www.caa.tuwien.ac.at/cvl/contact/floorplan.html}\normalsize
+	\item On appointment (\url{cvsp@caa.tuwien.ac.at})
+	\item Wed 11:45 -- 12:30 (after lecture)
+	\item Room HA04-10 (\url{http://www.caa.tuwien.ac.at/cvl/contact/})
 \end{itemize}
 
 \bigskip
 We expect to stay in touch with you throughout the semester
+\begin{itemize}
+	\item Contact us if you have questions, problems
+\end{itemize}
 
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Course Assistance}
-
-I'm abroad from 11.10.\ to 25.10.\ with limited internet access
+\bigskip
+Follow \texttt{@tuwcvsp} on Twitter for updates
 
 \end{frame}
 
@@ -419,27 +445,12 @@ I'm abroad from 11.10.\ to 25.10.\ with limited internet access
 \begin{frame}
 \frametitle{Prerequisites}
 
+Ability to work independently, manage a small project\\\medskip
+Basic image processing and computer vision knowledge\\\medskip
 You must be able to develop software on your own
 \begin{itemize}
 	\item This is \emph{not} a general programming course
 \end{itemize}
-
-\bigskip
-Basic image processing and computer vision knowledge
-
-\end{frame}
-
-% -----------------------------------------------------------------------------
-
-\begin{frame}
-\frametitle{Grading}
-
-Initial presentation: 5\% \\
-Implementation and report: 80\% \\
-Final presentation: 15\%
-
-\bigskip
-\emph{Presentations are mandatory!}
 
 \end{frame}
 
@@ -448,11 +459,21 @@ Final presentation: 15\%
 \begin{frame}
 \frametitle{Associated Lecture}
 
-We recommend the associated lecture that covers
+We recommend the associated lecture for
 \begin{itemize}
 	\item CV software and resources
-	\item Selected CV applications
+	\item Tips for approaching CV problems
+	\item A showcase of interesting CV applications
 \end{itemize}
+
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Bibliography}
+
+\printbibliography
 
 \end{frame}
 
